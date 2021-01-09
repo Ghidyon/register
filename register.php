@@ -47,23 +47,19 @@
         <thead>
             <tr>
                 <th>S/N</th>
-                <?php $serial_no = 1; ?>
-                <?php foreach ($result as $key => $value) { ?>
-                <th> <?= ucfirst($key) ?></th>
-                <?php }  ?>
+                <th>Course</th>
+                <th>Grade</th>
             </tr>
         </thead>
         <tbody>
-                <?php foreach ($result as $key => $value) { ?>
-
-                <?php for ($i=0; $i < count($value); $i++) { ?>
-                <tr>
-                    <td><?= $serial_no ?></td>
-                    <td><?= $value[$i] ?></td>
-                    <?php $serial_no++; ?>
-                </tr>;
-                <?php }  ?>
-                <?php }  ?>
+            <?php $serial_no = 1; ?>
+            <?php for ($i=0; $i < count($result["course"]); $i++) { ?>
+            <tr>
+                <td> <?= $serial_no ?> </td>
+                <td> <?= $result["course"][$i] ?> </td>
+                <td> <?= $result["grade"][$i] ?> </td>
+            </tr>
+            <?php $serial_no++; } ?>                    
         </tbody>
     </table>
 </body>
