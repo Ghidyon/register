@@ -33,7 +33,11 @@ $result = $final_year->getResult(); // save array of result as a variable.
 
     <style>
         .body-center {
+            background: rgb(226, 226, 226);
             min-height: 100vh;
+            background-image: url('images/black.jpg');
+            background-position: center;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -49,9 +53,9 @@ $result = $final_year->getResult(); // save array of result as a variable.
 <body>
     <div class="body-center">
         <div class="container">
-            <h3>Register</h1>
+            <h3 class="white-text">Register of Courses Built on OOP Classes</h3>
 
-                <table class="table-responsive striped centered">
+                <table class="table-responsive striped centered white-text">
                     <thead>
                         <tr>
                             <th>S/N</th>
@@ -62,7 +66,7 @@ $result = $final_year->getResult(); // save array of result as a variable.
                     <tbody>
                         <?php $serial_no = 1; ?>
                         <!-- create initial value for serial number  -->
-                        <?php for ($i = 0; $i < count($result["course"]); $i++) { ?>
+                        <?php for ($i = 0; $i < count($result["course"]); $i++) : ?>
                             <!--  loop inside the sub-array to display array grades and courses -->
                             <tr>
                                 <td> <?= $serial_no ?> </td>
@@ -70,7 +74,8 @@ $result = $final_year->getResult(); // save array of result as a variable.
                                 <td> <?= $result["grade"][$i] ?> </td>
                             </tr>
                         <?php $serial_no++;
-                        } ?>
+                                endfor;
+                        ?>
                         <!--  increment serial number value for every loop that happens -->
                     </tbody>
                 </table>
